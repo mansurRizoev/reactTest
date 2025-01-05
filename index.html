@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        function Test() {
+            return (
+                <div>
+                    <h1>Привет, мир!</h1>
+                    <p>Это простая React-приложение.</p>
+                </div>
+            );
+        }
+        function Test2() {
+            return <h2>Тестовый компонент</h2>
+        }
+        function Ul() {
+            return (
+                <ul>
+                    <li>Apple iPhone 12 Pro</li>
+                    <li>Samsung Galaxy S20</li>
+                    <li>Huawei P40 Pro</li>
+                    <li>Google Pixel 5</li>
+                </ul>
+            )
+        }
+
+        ReactDOM
+            .createRoot(
+                document.getElementById("app")
+            )
+            .render(
+                <div id="items">
+                    <h2>Список телефонов</h2>
+                    <Ul />
+
+                    <Test />
+                    <Test2 />
+                </div>,
+
+            )
+    </script>
+</body>
+
+</html>
