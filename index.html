@@ -13,16 +13,29 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        function Test() {
-            return (
-                <div>
-                    <h1>Привет, мир!</h1>
-                    <p>Это простая React-приложение.</p>
-                </div>
-            );
-        }
+
         function Test2() {
             return <h2>Тестовый компонент</h2>
+        }
+        let CreateBtn = (props) => {
+            let handleClick = (data) => {
+                alert(data);
+            }
+            return <button onClick={() => handleClick(props.btnTxt)}>{props.btnTxt}</button>
+        }
+        let Students = () => {
+            return (
+                <ul>
+                    <li>Иванов</li>
+                    <li>Петров</li>
+                    <li>Сидоров</li>
+                </ul>
+            )
+        }
+        class HiDev extends React.Component {
+            render() {
+                return <h1>Привет, {this.props.name}!</h1>
+            }
         }
         function Ul() {
             return (
@@ -41,11 +54,14 @@
             )
             .render(
                 <div id="items">
+                    <Students />
                     <h2>Список телефонов</h2>
                     <Ul />
-
-                    <Test />
+                    <HiDev name="Иван" />
                     <Test2 />
+                    <CreateBtn btnTxt="Кнопка" />
+                    <CreateBtn btnTxt="Кнопка 2" />
+                    <CreateBtn btnTxt="Кнопка 3" />
                 </div>,
 
             )
